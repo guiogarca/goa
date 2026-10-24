@@ -31,7 +31,7 @@ npm run preview
 
 ## Ajustes antes de publicar
 
-- E-mail: variável `CONTACT_EMAIL` no início de `src/main.jsx`. O valor `contato@goa.com.br` é provisório e deve ser confirmado.
+- E-mail: variável `CONTACT_EMAIL` no início de `src/main.jsx`. O valor `comercial@goatecnologia.com.br` é provisório e deve ser confirmado.
 - Logo: `public/logo-goa.png`.
 - Textos, serviços e skills: `src/main.jsx`.
 - Cores e estilos: `src/styles.css`.

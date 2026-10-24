@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { ArrowRight, ArrowUpRight, Menu, X, Code2, Workflow, Plug, ChartNoAxesColumnIncreasing, Lightbulb, Cloud, Monitor, RefreshCw, Settings, Layers, Users, Search, Target, ClipboardCheck, TrendingUp, ShieldCheck, Database, Boxes, CheckCircle2, Mail, ChevronRight } from 'lucide-react';
 import './styles.css';
 
-const CONTACT_EMAIL = 'contato@goa.com.br'; // Confirme o endereço antes de publicar.
+const CONTACT_EMAIL = 'comercial@goatecnologia.com.br'; // Confirme o endereço antes de publicar.
 const services = [
   { icon: Code2, title: 'Desenvolvimento de Sistemas', desc: 'Sistemas web, portais e aplicações sob medida, com foco em desempenho, segurança e escalabilidade.' },
   { icon: Workflow, title: 'Automação de Processos (BPM)', desc: 'Modelagem e automação com BPMN e Camunda, conectando pessoas, sistemas e dados.' },

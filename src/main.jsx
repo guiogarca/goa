@@ -1,0 +1,51 @@
+import React, { useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import { ArrowRight, ArrowUpRight, Menu, X, Code2, Workflow, Plug, ChartNoAxesColumnIncreasing, Lightbulb, Cloud, Monitor, RefreshCw, Settings, Layers, Users, Search, Target, ClipboardCheck, TrendingUp, ShieldCheck, Database, Boxes, CheckCircle2, Mail, ChevronRight } from 'lucide-react';
+import './styles.css';
+
+const CONTACT_EMAIL = 'contato@goa.com.br'; // Confirme o endereço antes de publicar.
+const services = [
+  { icon: Code2, title: 'Desenvolvimento de Sistemas', desc: 'Sistemas web, portais e aplicações sob medida, com foco em desempenho, segurança e escalabilidade.' },
+  { icon: Workflow, title: 'Automação de Processos (BPM)', desc: 'Modelagem e automação com BPMN e Camunda, conectando pessoas, sistemas e dados.' },
+  { icon: Plug, title: 'Integrações e APIs', desc: 'APIs REST, integrações com sistemas legados e serviços de terceiros com segurança e confiabilidade.' },
+  { icon: ChartNoAxesColumnIncreasing, title: 'Dados e Analytics', desc: 'Modelagem de dados, relatórios e dashboards para transformar informações em decisões.' },
+  { icon: Lightbulb, title: 'Consultoria e Produto', desc: 'Design Thinking, análise de requisitos, UX/UI e estruturação de produtos digitais.' },
+  { icon: Cloud, title: 'Cloud & DevOps', desc: 'Infraestrutura em nuvem, containers, CI/CD, monitoramento e ambientes escaláveis.' },
+  { icon: Monitor, title: 'Plataformas Digitais', desc: 'Portais, inscrições, eventos, pagamentos e soluções centradas na experiência do usuário.' },
+  { icon: RefreshCw, title: 'Sustentação e Evolução', desc: 'Suporte especializado, evolução contínua e melhoria de performance.' },
+];
+const skills = ['Java', 'Spring Boot', 'React', 'Camunda 7 / BPMN', 'PostgreSQL', 'SQL Server', 'AWS', 'Docker', 'REST APIs', 'Azure DevOps', 'Tailwind CSS', 'CI/CD', 'JavaScript', 'Arquitetura de Sistemas', 'Análise de Requisitos'];
+const steps = [
+  { icon: Search, num: '01', title: 'Descoberta', desc: 'Entendemos o contexto, desafios e oportunidades.' },
+  { icon: Target, num: '02', title: 'Definição', desc: 'Mapeamos requisitos e estruturamos a solução.' },
+  { icon: Code2, num: '03', title: 'Desenvolvimento', desc: 'Projetamos e desenvolvemos com qualidade e segurança.' },
+  { icon: ClipboardCheck, num: '04', title: 'Validação', desc: 'Testamos, homologamos e evoluímos com feedback real.' },
+  { icon: TrendingUp, num: '05', title: 'Evolução', desc: 'Acompanhamos resultados e identificamos novos passos.' },
+];
+const differences = [
+  { icon: Target, title: 'Visão estratégica', desc: 'Alinhamento entre tecnologia e objetivos de negócio.' },
+  { icon: Users, title: 'Time multidisciplinar', desc: 'Desenvolvimento, análise, UX e infraestrutura integrados.' },
+  { icon: Boxes, title: 'Soluções escaláveis', desc: 'Arquitetura preparada para crescer com seu negócio.' },
+  { icon: ChartNoAxesColumnIncreasing, title: 'Foco em resultado', desc: 'Entregas orientadas a valor e melhoria contínua.' },
+];
+function SectionIntro({ eyebrow, title, children }) { return <div className="section-intro"><div><span className="eyebrow">{eyebrow}</span><h2>{title}</h2></div>{children && <p>{children}</p>}</div>; }
+function App() {
+ const [open, setOpen] = useState(false);
+ const close = () => setOpen(false);
+ const contact = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Contato pelo site GOA Tecnologia')}`;
+ return <>
+  <header className="header"><div className="container header-inner"><a className="brand" href="#inicio" aria-label="GOA Tecnologia, início" onClick={close}><img src="/logo-goa.png" alt="GOA Tecnologia"/></a><nav className={open ? 'nav open' : 'nav'} aria-label="Navegação principal"><a onClick={close} href="#inicio">Início</a><a onClick={close} href="#servicos">Serviços</a><a onClick={close} href="#skills">Skills</a><a onClick={close} href="#metodo">Como trabalhamos</a><a onClick={close} href="#sobre">Sobre</a></nav><a className="button button-primary header-cta" href={contact}>Fale com a GOA <ArrowRight size={16}/></a><button className="mobile-toggle" aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</button></div></header>
+  <main>
+   <section className="hero" id="inicio"><div className="hero-visual" aria-hidden="true"><div className="hero-orbit"></div><div className="code-window"><div className="code-dots"><i/><i/><i/></div><span>const solution = &#123;</span><span>&nbsp; strategy: 'impact',</span><span>&nbsp; design: 'people',</span><span>&nbsp; technology: 'scale'</span><span>&#125;;</span></div></div><div className="container hero-inner"><div className="hero-copy"><span className="eyebrow">TECNOLOGIA QUE GERA RESULTADOS</span><h1>Transformamos ideias em <em>soluções digitais</em> de impacto.</h1><p>A GOA é uma empresa de tecnologia especializada em engenharia de software, automação de processos, integrações e plataformas digitais, unindo estratégia, design e tecnologia para resolver desafios reais de negócio.</p><div className="hero-actions"><a className="button button-primary" href="#servicos">Nossos serviços <ArrowRight size={17}/></a><a className="button button-outline" href={contact}>Fale com a GOA</a></div></div><div className="hero-side-label">ESTRATÉGIA<br/>DESIGN<br/>TECNOLOGIA<br/>PROCESSOS<br/>RESULTADOS</div></div></section>
+   <section className="challenges section" id="desafios"><div className="container challenge-grid"><div><span className="eyebrow">DESAFIOS REAIS</span><h2>Tecnologia para processos mais simples, negócios mais eficientes.</h2><p>Ajudamos organizações a ganhar eficiência, reduzir complexidade e criar experiências digitais que realmente geram valor para pessoas e para o negócio.</p></div><div className="challenge-items"><article><Settings/><div><h3>Processos manuais e ineficientes</h3><p>Automação e digitalização com mais controle e rastreabilidade.</p></div></article><article><Layers/><div><h3>Sistemas isolados</h3><p>Integrações seguras e APIs para conexão de dados e serviços.</p></div></article><article><ChartNoAxesColumnIncreasing/><div><h3>Falta de visibilidade</h3><p>Dados, relatórios e dashboards para decisões mais rápidas.</p></div></article><article><Users/><div><h3>Experiências complexas</h3><p>Soluções digitais centradas no usuário, simples e intuitivas.</p></div></article></div></div></section>
+   <section className="section services" id="servicos"><div className="container"><SectionIntro eyebrow="NOSSOS SERVIÇOS" title={<>Soluções completas<br/>em tecnologia.</>}>Do planejamento à sustentação, atuamos em todas as etapas para entregar soluções robustas, escaláveis e alinhadas aos objetivos do seu negócio.</SectionIntro><div className="services-grid">{services.map(({icon: Icon,title,desc}) => <article className="service-card" key={title}><Icon className="service-icon" size={29} strokeWidth={1.8}/><h3>{title}</h3><p>{desc}</p><a href={contact} aria-label={`Conversar sobre ${title}`} className="circle-arrow"><ArrowUpRight size={18}/></a></article>)}</div></div></section>
+   <section className="section skills" id="skills"><div className="container"><SectionIntro eyebrow="NOSSAS SKILLS" title={<>Tecnologias que<br/>impulsionam resultados.</>}>Utilizamos ferramentas e tecnologias consolidadas para construir soluções modernas, seguras e de alta performance.</SectionIntro><div className="skills-grid">{skills.map((skill,i)=><div className="skill-card" key={skill}><span className="skill-mark">{i%5===0?<Code2/>:i%5===1?<Database/>:i%5===2?<Layers/>:i%5===3?<Workflow/>:<ShieldCheck/>}</span><strong>{skill}</strong></div>)}</div></div></section>
+   <section className="section method" id="metodo"><div className="container"><div className="method-heading"><span className="eyebrow">COMO TRABALHAMOS</span><h2>Do entendimento<br/>ao impacto.</h2><p>Aplicamos princípios de Design Thinking e boas práticas de engenharia para desenvolver soluções que fazem sentido para as pessoas e geram resultados sustentáveis.</p></div><div className="steps">{steps.map(({icon:Icon,num,title,desc})=><article key={num}><Icon size={30}/><span className="step-number">{num}</span><h3>{title}</h3><p>{desc}</p></article>)}</div></div></section>
+   <section className="section about" id="sobre"><div className="container"><SectionIntro eyebrow="NOSSOS DIFERENCIAIS" title={<>Mais que tecnologia,<br/>parceria de longo prazo.</>}>Unimos visão de negócio, experiência técnica e compromisso com resultados para construir soluções que evoluem junto com o seu desafio.</SectionIntro><div className="about-grid"><div className="difference-grid">{differences.map(({icon:Icon,title,desc})=><article key={title}><Icon size={28}/><div><h3>{title}</h3><p>{desc}</p></div></article>)}</div><div className="about-art" aria-label="Estratégia, processos, tecnologia, pessoas e resultados"><div className="art-lines"/><span>IDEIAS<br/>PROCESSOS<br/>TECNOLOGIA<br/>PESSOAS<br/>RESULTADOS</span></div></div></div></section>
+   <section className="cta-section" id="contato"><div className="container cta-inner"><div><span className="eyebrow">VAMOS CONVERSAR?</span><h2>Pronto para transformar<br/>seus desafios em resultados?</h2></div><div><p>Conte com a GOA para desenvolver soluções digitais que impulsionam o seu negócio.</p><a className="button button-white" href={contact}>Fale com a GOA <ArrowRight size={17}/></a></div></div></section>
+  </main>
+  <footer className="footer"><div className="container footer-inner"><div><a className="footer-brand" href="#inicio"><img src="/logo-goa.png" alt="GOA Tecnologia"/></a><p>Tecnologia, estratégia e pessoas<br/>para um futuro mais humano e digital.</p></div><div><h3>Navegação</h3><a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#skills">Skills</a><a href="#metodo">Como trabalhamos</a><a href="#sobre">Sobre</a></div><div><h3>Contato</h3><a className="footer-contact" href={contact}>Fale com a GOA <ArrowRight size={15}/></a><a href={`mailto:${CONTACT_EMAIL}`}><Mail size={15}/> {CONTACT_EMAIL}</a></div></div><div className="container footer-bottom">© {new Date().getFullYear()} GOA Tecnologia. Todos os direitos reservados.</div></footer>
+ </>;
+}
+
+createRoot(document.getElementById('root')).render(<App/>);

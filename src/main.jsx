@@ -44,7 +44,61 @@ function App() {
    <section className="section about" id="sobre"><div className="container"><SectionIntro eyebrow="NOSSOS DIFERENCIAIS" title={<>Mais que tecnologia,<br/>parceria de longo prazo.</>}>Unimos visão de negócio, experiência técnica e compromisso com resultados para construir soluções que evoluem junto com o seu desafio.</SectionIntro><div className="about-grid"><div className="difference-grid">{differences.map(({icon:Icon,title,desc})=><article key={title}><Icon size={28}/><div><h3>{title}</h3><p>{desc}</p></div></article>)}</div><div className="about-art" aria-label="Estratégia, processos, tecnologia, pessoas e resultados"><div className="art-lines"/><span>IDEIAS<br/>PROCESSOS<br/>TECNOLOGIA<br/>PESSOAS<br/>RESULTADOS</span></div></div></div></section>
    <section className="cta-section" id="contato"><div className="container cta-inner"><div><span className="eyebrow">VAMOS CONVERSAR?</span><h2>Pronto para transformar<br/>seus desafios em resultados?</h2></div><div><p>Conte com a GOA para desenvolver soluções digitais que impulsionam o seu negócio.</p><a className="button button-white" href={contact}>Fale com a GOA <ArrowRight size={17}/></a></div></div></section>
   </main>
-  <footer className="footer"><div className="container footer-inner"><div><a className="footer-brand" href="#inicio"><img src="/logo-goa.png" alt="GOA Tecnologia"/></a><p>Tecnologia, estratégia e pessoas<br/>para um futuro mais humano e digital.</p></div><div><h3>Navegação</h3><a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#skills">Skills</a><a href="#metodo">Como trabalhamos</a><a href="#sobre">Sobre</a></div><div><h3>Contato</h3><a className="footer-contact" href={contact}>Fale com a GOA <ArrowRight size={15}/></a><a href={`mailto:${CONTACT_EMAIL}`}><Mail size={15}/> {CONTACT_EMAIL}</a><p className="footer-location">Campo Grande – Mato Grosso do Sul, Brasil</p></div></div><div className="container footer-bottom"><div className="footer-legal">GOA TECNOLOGIA DA INFORMACAO LTDA <span aria-hidden="true">·</span> CNPJ 53.631.581/0001-26</div><div>© {new Date().getFullYear()} GOA Tecnologia. Todos os direitos reservados.</div></div></footer>
+
+<footer className="footer">
+  <div className="container footer-inner">
+    <div>
+      <a className="footer-brand" href="#inicio">
+        <img src="/logo-goa.png" alt="GOA Tecnologia" />
+      </a>
+      <p>
+        Tecnologia, estratégia e inovação
+        <br />
+        para transformar negócios.
+      </p>
+    </div>
+
+    <div>
+      <h3>Navegação</h3>
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#skills">Skills</a>
+      <a href="#metodo">Como trabalhamos</a>
+      <a href="#sobre">Sobre</a>
+    </div>
+
+    <div>
+      <h3>Contato</h3>
+      <a
+        className="footer-contact"
+        href="mailto:comercial@goatecnologia.com.br"
+      >
+        Fale com a GOA <ArrowRight size={15} />
+      </a>
+
+      <a href="mailto:comercial@goatecnologia.com.br">
+        <Mail size={15} />
+        comercial@goatecnologia.com.br
+      </a>
+
+      <p className="footer-location">
+        Campo Grande – Mato Grosso do Sul, Brasil
+      </p>
+    </div>
+  </div>
+
+  <div className="container footer-bottom">
+    <div className="footer-legal">
+      <strong>GOA TECNOLOGIA DA INFORMACAO LTDA</strong>
+      <span>CNPJ: 53.631.581/0001-26</span>
+    </div>
+
+    <div className="footer-copyright">
+      © {new Date().getFullYear()} GOA Tecnologia.
+      Todos os direitos reservados.
+    </div>
+  </div>
+</footer>
  </>;
 }
 
